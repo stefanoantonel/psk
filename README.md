@@ -10,6 +10,8 @@ If you are a Windows user, install Python and from inside the `app` directory ru
 python -m http.server 8080
 ```
 
+if using Python 3 or just `python -m SimpleHTTPServer 8080` if using an older version of Python.
+
 or on a Mac/*nix machine, run:
 
 ```
