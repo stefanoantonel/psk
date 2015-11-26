@@ -1,0 +1,83 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="main-head">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <!-- Main Toolbar -->
+    <paper-toolbar id="mainToolbar" class="">
+<!--
+      <paper-tabs selected="{{selected}}" class="flex">
+        <paper-tab icon="maps:local-dining">Inicio</paper-tab>
+        <paper-tab>Recetas</paper-tab>
+        <paper-tab>Ejericios</paper-tab>
+      </paper-tabs> -->
+
+
+
+      <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+      <!-- <span class="flex app-name">Fitapp</span> -->
+
+        <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
+
+        <a href$="{{url}}users/Addy">
+          <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
+        </a>
+
+        <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
+
+
+
+
+      <!-- Toolbar icons -->
+
+      <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
+      <paper-icon-button icon="search"></paper-icon-button>
+
+      <!-- Application name -->
+      <!-- <div class="middle middle-container center horizontal layout">
+        <div class="app-name">Polymer Starter Kit</div>
+      </div> -->
+
+      <!-- Application sub title -->
+      <!-- <div class="bottom bottom-container center horizontal layout">
+        <div class="bottom-title paper-font-subhead">The future of the web today</div>
+      </div> -->
+
+
+
+   </paper-toolbar>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'main-head',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          }
+        },
+        ready: function() {
+          this.items = [
+            'Responsive Web App boilerplate',
+            'Iron Elements and Paper Elements',
+            'End-to-end Build Tooling (including Vulcanize)',
+            'Unit testing with Web Component Tester',
+            'Routing with Page.js',
+            'Offline support with the Platinum Service Worker Elements'
+          ];
+        }
+      });
+    })();
+  </script>
+</dom-module>
