@@ -3,40 +3,16 @@
 
 <dom-module id="main-head">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-
+    
     <!-- Main Toolbar -->
-    <paper-toolbar id="mainToolbar" class="">
-<!--
-      <paper-tabs selected="{{selected}}" class="flex">
-        <paper-tab icon="maps:local-dining">Inicio</paper-tab>
-        <paper-tab>Recetas</paper-tab>
-        <paper-tab>Ejericios</paper-tab>
-      </paper-tabs> -->
-
-
+    <paper-toolbar id="mainToolbar" class="tall">
 
       <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-      <!-- <span class="flex app-name">Fitapp</span> -->
-
-        <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
-
-        <a href$="{{url}}users/Addy">
-          <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
-        </a>
-
-        <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
-
-
-
+      <span class="flex app-name">Fitapp</span>
 
       <!-- Toolbar icons -->
 
-      <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
+      <paper-icon-button icon="refresh"></paper-icon-button>
       <paper-icon-button icon="search"></paper-icon-button>
 
       <!-- Application name -->
@@ -51,6 +27,20 @@
 
 
 
+   </paper-toolbar>
+
+   <paper-toolbar class="">
+     <paper-tabs class="flex" selected="{{selected}}">
+       <paper-tab>
+         <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
+       </paper-tab>
+       <paper-tab>
+         <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
+       </paper-tab>
+       <paper-tab>
+        <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
+       </paper-tab>
+     </paper-tabs>
    </paper-toolbar>
 
   </template>

@@ -76,9 +76,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="food" href="food">
+           <iron-icon id="food" class="" icon="social:person"></iron-icon>
+            <span>Perfil</span>
+          </a>
+
           <a data-route="home" href="{{baseUrl}}">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
+          </a>
+
+          <a data-route="food" href="food">
+           <iron-icon id="food" class="" icon="maps:local-dining"></iron-icon>
+            <span>Recetas</span>
+          </a>
+
+          <a data-route="exercise" href="exercise">
+            <iron-icon icon="maps:directions-bike"></iron-icon>
+            <span>Ejericios</span>
           </a>
 
           <a data-route="users" href="users">
@@ -98,24 +113,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-      <main-head></main-head>
+      <!-- <main-head></main-head> -->
 
-       <!-- <paper-toolbar class="">
-         <paper-tabs selected="{{selected}}" class="flex">
-           <paper-tab>Inicio</paper-tab>
-           <paper-tab>Recetas</paper-tab>
-           <paper-tab>Ejericios</paper-tab>
-         </paper-tabs>
-       </paper-toolbar> -->
+      <!-- Main Toolbar -->
+      <paper-toolbar id="mainToolbar" class="">
 
-       <!--
-        <paper-toolbar class="short">
-          <paper-tabs class="flex" selected="{{selected}}">
-            <paper-tab>Inicio</paper-tab>
-            <paper-tab>Recetas</paper-tab>
-            <paper-tab>Ejericios</paper-tab>
-          </paper-tabs>
-        </paper-toolbar> -->
+        <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+        <span class="flex app-name">Fitapp</span>
+
+        <!-- Toolbar icons -->
+
+        <paper-icon-button icon="refresh"></paper-icon-button>
+        <paper-icon-button icon="search"></paper-icon-button>
+
+        <!-- Application name -->
+        <!-- <div class="middle middle-container center horizontal layout">
+          <div class="app-name">Polymer Starter Kit</div>
+        </div> -->
+
+        <!-- Application sub title -->
+        <!-- <div class="bottom bottom-container center horizontal layout">
+          <div class="bottom-title paper-font-subhead">The future of the web today</div>
+        </div> -->
+
+
+
+     </paper-toolbar>
+
+     <!-- <paper-toolbar class="">
+       <paper-tabs class="flex" selected="{{selected}}">
+         <paper-tab>
+           <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
+         </paper-tab>
+         <paper-tab>
+           <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
+         </paper-tab>
+         <paper-tab>
+          <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
+         </paper-tab>
+       </paper-tabs>
+     </paper-toolbar> -->
+
+
+
+
+
 
         <!-- Main Content -->
         <div class="content">
@@ -123,11 +165,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="home">
               <paper-material elevation="1">
-
                 <my-greeting></my-greeting>
-
               </paper-material>
-
             </section>
 
             <section data-route="users">
