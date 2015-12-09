@@ -1,5 +1,6 @@
 {
-  "name": "polymer-starter-kit",
+  "name": "e-cofit",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
