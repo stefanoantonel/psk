@@ -65,7 +65,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-drawer-panel id="paperDrawerPanel">
       <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel >
+      <paper-scroll-header-panel drawer>
 
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
@@ -76,7 +76,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
 
           <a data-route="profile" href="profile">
-           <iron-icon id="profile" class="" icon="social:person"></iron-icon>
+           <iron-icon id="food" class="" icon="social:person"></iron-icon>
             <span>Perfil</span>
           </a>
 
@@ -130,15 +130,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <app-toolbar></app-toolbar>
      <paper-toolbar>
          <!-- Tabs for the 3 categories -->
-         <paper-tabs class="flex" selected="{{selected}}">
-           <paper-tab>
+         <paper-tabs class="flex" attr-for-selected="name" selected="{{route}}">
+           <paper-tab name="home">
              <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
            </paper-tab>
-           <paper-tab>
-             <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
+           <paper-tab name="food">
+             <paper-icon-button id="food" class="flex" icon="maps:local-dining" my="pp"></paper-icon-button>
            </paper-tab>
-           <paper-tab>
-            <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
+           <paper-tab name="exercise">
+            <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike" my="pp"></paper-icon-button>
            </paper-tab>
          </paper-tabs>
 
