@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="my-profile">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-material elevation="1">
+      <h2 class="page-title">{{greeting}}</h2>
+    </paper-material>
+
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'my-profile',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'My Profile!',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

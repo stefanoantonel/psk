@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="exercise-elem">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2 class="page-title">{{greeting}}</h2>
+    <paper-fab icon="add"></paper-fab>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'exercise-elem',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Exercise!',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

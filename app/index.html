@@ -74,8 +74,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="food" href="food">
-           <iron-icon id="food" class="" icon="social:person"></iron-icon>
+
+          <a data-route="profile" href="profile">
+           <iron-icon id="profile" class="" icon="social:person"></iron-icon>
             <span>Perfil</span>
           </a>
 
@@ -147,10 +148,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
+            <section data-route="profile">
+                <my-profile></my-profile>
+            </section>
+
             <section data-route="home">
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
               </paper-material>
+            </section>
+
+            <section data-route="food">
+                <food-elem></food-elem>
+            </section>
+
+            <section data-route="exercise">
+              <exercise-elem></exercise-elem>
             </section>
 
             <section data-route="users">
@@ -166,6 +179,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-material elevation="1">
                   <my-list><my-list>
               </paper-material>
+
+                  <exercise-elem></exercise-elem>
+
             </section>
 
             <section data-route="user-info">
