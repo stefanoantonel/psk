@@ -16,6 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
     </style>
+    <main-head><main-head>
     <ul>
       <template is="dom-repeat" items="{{items}}">
         <li><span class="paper-font-body1">{{item}}</span></li>
@@ -26,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     (function() {
       'use strict';
-  
+
       Polymer({
         is: 'my-list',
         properties: {
@@ -35,7 +36,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             notify: true,
           }
         },
+        created: function() {
+          console.log('Created');
+
+        },
         ready: function() {
+          console.log('Ready');
           this.items = [
             'Responsive Web App boilerplate',
             'Iron Elements and Paper Elements',

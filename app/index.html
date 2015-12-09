@@ -109,13 +109,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" class="">
+      <paper-scroll-header-panel main id="headerPanelMain" class="flex">
 
 
 
       <!-- <main-head></main-head> -->
 
+
       <!-- Main Toolbar -->
+
       <paper-toolbar id="mainToolbar" class="">
 
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
@@ -123,7 +125,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Toolbar icons -->
 
-        <paper-icon-button icon="refresh"></paper-icon-button>
+        <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
         <paper-icon-button icon="search"></paper-icon-button>
 
         <!-- Application name -->
@@ -140,19 +142,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
      </paper-toolbar>
 
-     <!-- <paper-toolbar class="">
-       <paper-tabs class="flex" selected="{{selected}}">
-         <paper-tab>
-           <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
-         </paper-tab>
-         <paper-tab>
-           <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
-         </paper-tab>
-         <paper-tab>
-          <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
-         </paper-tab>
-       </paper-tabs>
-     </paper-toolbar> -->
+     <app-toolbar></app-toolbar>
+     <paper-toolbar>
+
+         <paper-tabs class="flex" selected="{{selected}}">
+           <paper-tab>
+             <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
+           </paper-tab>
+           <paper-tab>
+             <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
+           </paper-tab>
+           <paper-tab>
+            <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
+           </paper-tab>
+         </paper-tabs>
+
+     </paper-toolbar>
+
 
 
 
@@ -171,12 +177,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="users">
               <paper-material elevation="1">
+
                 <h2 class="page-title">Users</h2>
                 <p>This is the users section</p>
                 <a href$="{{baseUrl}}users/Addy">Addy</a><br>
                 <a href$="{{baseUrl}}users/Rob">Robin</a><br>
                 <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
                 <a href$="{{baseUrl}}users/Sam">Sam</a>
+              </paper-material>
+              <paper-material elevation="1">
+                  <my-list><my-list>
               </paper-material>
             </section>
 
