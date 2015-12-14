@@ -68,19 +68,10 @@ var imageOptimizeTask = function(src, dest) {
 
 var optimizeHtmlTask = function(src, dest) {
   var assets = $.useref.assets({
-<<<<<<< HEAD
-    searchPath: ['.tmp', 'app', dist()]
-  });
-
-  return gulp.src(src)
-    // Replace path for vulcanized assets
-    .pipe($.if('*.html', $.replace('elements/elements.html', 'elements/elements.vulcanized.html')))
-=======
     searchPath: ['.tmp', 'app']
   });
 
   return gulp.src(src)
->>>>>>> psk/master
     .pipe(assets)
     // Concatenate and minify JavaScript
     .pipe($.if('*.js', $.uglify({
@@ -113,10 +104,6 @@ gulp.task('elements', function() {
   return styleTask('elements', ['**/*.css']);
 });
 
-<<<<<<< HEAD
-// Lint JavaScript
-gulp.task('lint', function() {
-=======
 // Ensure that we are not missing required files for the project
 // "dot" files are specifically tricky due to them being hidden on
 // some systems.
@@ -130,7 +117,6 @@ gulp.task('ensureFiles', function(cb) {
 
 // Lint JavaScript
 gulp.task('lint', ['ensureFiles'], function() {
->>>>>>> psk/master
   return gulp.src([
       'app/scripts/**/*.js',
       'app/elements/**/*.js',
@@ -161,39 +147,13 @@ gulp.task('copy', function() {
   var app = gulp.src([
     'app/*',
     '!app/test',
-<<<<<<< HEAD
-=======
     '!app/elements',
     '!app/bower_components',
->>>>>>> psk/master
     '!app/cache-config.json'
   ], {
     dot: true
   }).pipe(gulp.dest(dist()));
 
-<<<<<<< HEAD
-  var bower = gulp.src([
-    'bower_components/**/*'
-  ]).pipe(gulp.dest(dist('bower_components')));
-
-  var elements = gulp.src(['app/elements/**/*.html',
-      'app/elements/**/*.css',
-      'app/elements/**/*.js'
-    ])
-    .pipe(gulp.dest(dist('elements')));
-
-  var swBootstrap = gulp.src(['bower_components/platinum-sw/bootstrap/*.js'])
-    .pipe(gulp.dest(dist('elements/bootstrap')));
-
-  var swToolbox = gulp.src(['bower_components/sw-toolbox/*.js'])
-    .pipe(gulp.dest(dist('sw-toolbox')));
-
-  var vulcanized = gulp.src(['app/elements/elements.html'])
-    .pipe($.rename('elements.vulcanized.html'))
-    .pipe(gulp.dest(dist('elements')));
-
-  return merge(app, bower, elements, vulcanized, swBootstrap, swToolbox)
-=======
   // Copy over only the bower_components we need
   // These are things which cannot be vulcanized
   var bower = gulp.src([
@@ -201,7 +161,6 @@ gulp.task('copy', function() {
   ]).pipe(gulp.dest(dist('bower_components')));
 
   return merge(app, bower)
->>>>>>> psk/master
     .pipe($.size({
       title: 'copy'
     }));
@@ -219,33 +178,19 @@ gulp.task('fonts', function() {
 // Scan your HTML for assets & optimize them
 gulp.task('html', function() {
   return optimizeHtmlTask(
-<<<<<<< HEAD
-    ['app/**/*.html', '!app/{elements,test}/**/*.html'],
-=======
     ['app/**/*.html', '!app/{elements,test,bower_components}/**/*.html'],
->>>>>>> psk/master
     dist());
 });
 
 // Vulcanize granular configuration
 gulp.task('vulcanize', function() {
-<<<<<<< HEAD
-  var DEST_DIR = dist('elements');
-  return gulp.src(dist('elements/elements.vulcanized.html'))
-=======
   return gulp.src('app/elements/elements.html')
->>>>>>> psk/master
     .pipe($.vulcanize({
       stripComments: true,
       inlineCss: true,
       inlineScripts: true
     }))
-<<<<<<< HEAD
-    .pipe($.minifyInline())
-    .pipe(gulp.dest(DEST_DIR))
-=======
     .pipe(gulp.dest(dist('elements')))
->>>>>>> psk/master
     .pipe($.size({title: 'vulcanize'}));
 });
 
@@ -309,14 +254,7 @@ gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
     // https: true,
     server: {
       baseDir: ['.tmp', 'app'],
-<<<<<<< HEAD
-      middleware: [historyApiFallback()],
-      routes: {
-        '/bower_components': 'bower_components'
-      }
-=======
       middleware: [historyApiFallback()]
->>>>>>> psk/master
     }
   });
 
@@ -372,9 +310,6 @@ gulp.task('build-deploy-gh-pages', function(cb) {
 // Deploy to GitHub pages gh-pages branch
 gulp.task('deploy-gh-pages', function() {
   return gulp.src(dist('**/*'))
-<<<<<<< HEAD
-    .pipe($.ghPages());
-=======
     // Check if running task from Travis CI, if so run using GH_TOKEN
     // otherwise run using ghPages defaults.
     .pipe($.if(process.env.TRAVIS === 'true', $.ghPages({
@@ -382,7 +317,6 @@ gulp.task('deploy-gh-pages', function() {
       silent: true,
       branch: 'gh-pages'
     }), $.ghPages()));
->>>>>>> psk/master
 });
 
 // Load tasks for web-component-tester
