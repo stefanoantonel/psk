@@ -57,8 +57,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     var maxMiddleScale = 0.50;
     var auxHeight = heightDiff - detail.y;
     var auxScale = heightDiff / (1 - maxMiddleScale);
-    var scaleMiddle = Math.max(maxMiddleScale, auxHeight / auxScale + maxMiddleScale);
-    var scaleBottom = 1 - yRatio;
+    // var scaleMiddle = Math.max(maxMiddleScale, auxHeight / auxScale + maxMiddleScale);
+    // var scaleBottom = 1 - yRatio;
 
     // Move/translate middleContainer
     // Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
