@@ -132,15 +132,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <app-toolbar></app-toolbar>
      <paper-toolbar>
          <!-- Tabs for the 3 categories -->
-         <paper-tabs link class="flex" attr-for-selected="name" selected="{{route}}">
-           <paper-tab name="home">
-             <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
+        <style>
+        .inherit {
+          color: inherit;
+          background-color: inherit;
+          display: inline-flex;
+        }
+        </style>
+         <paper-tabs class="flex" attr-for-selected="name" selected="[[route]]">
+           <paper-tab link name="home">
+             <a href="{{baseUrl}}" class="inherit">
+               <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
+             </a>
            </paper-tab>
-           <paper-tab name="food">
-             <paper-icon-button id="food" class="flex" icon="maps:local-dining" my="pp"></paper-icon-button>
+           <paper-tab link name="food">
+              <a href="{{baseUrl}}food" class="inherit">
+                <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
+              </a>
            </paper-tab>
-           <paper-tab name="exercise">
-            <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike" my="pp"></paper-icon-button>
+           <paper-tab link name="exercise" >
+             <a href="{{baseUrl}}exercise" class="inherit">
+               <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
+             </a>
            </paper-tab>
          </paper-tabs>
 
