@@ -75,7 +75,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
 
-          <a data-route="profile" href="profile">
+          <a data-route="profile" href="{{baseUrl}}profile">
            <iron-icon id="food" class="" icon="social:person"></iron-icon>
             <span>Perfil</span>
           </a>
@@ -85,12 +85,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="food" href="food">
+          <a data-route="food" href="{{baseUrl}}food">
            <iron-icon id="food" class="" icon="maps:local-dining"></iron-icon>
             <span>Recetas</span>
           </a>
 
-          <a data-route="exercise" href="exercise">
+          <a data-route="exercise" href="{{baseUrl}}exercise">
             <iron-icon icon="maps:directions-bike"></iron-icon>
             <span>Ejericios</span>
           </a>
@@ -119,7 +119,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-toolbar id="mainToolbar" class="">
 
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-        <span class="flex app-name">Fitapp</span>
+        <span class="flex">Fitapp</span>
+        <span>[[route]]</span>
 
         <!-- Toolbar icons -->
 
@@ -131,7 +132,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <app-toolbar></app-toolbar>
      <paper-toolbar>
          <!-- Tabs for the 3 categories -->
-         <paper-tabs class="flex" attr-for-selected="name" selected="{{route}}">
+         <paper-tabs link class="flex" attr-for-selected="name" selected="{{route}}">
            <paper-tab name="home">
              <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
            </paper-tab>
@@ -200,6 +201,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
           </iron-pages>
+          <!-- To move between the different pages -->
+          <!-- <script>
+              document.addEventListener('click', function(e) {
+                var pages = document.querySelector('iron-pages');
+                pages.selectNext();
+              });
+            </script> -->
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>
