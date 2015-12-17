@@ -133,7 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <paper-toolbar>
          <!-- Tabs for the 3 categories -->
         <style is="custom-style">
-        .link {
+        .link-icon {
           color: inherit;
           background-color: inherit;
           display: inline-flex;
@@ -141,17 +141,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </style>
          <paper-tabs class="flex" attr-for-selected="name" selected="[[route]]">
            <paper-tab link name="home">
-             <a href="{{baseUrl}}" class="inherit">
+             <a href="{{baseUrl}}" class="link-icon">
                <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
              </a>
            </paper-tab>
            <paper-tab link name="food">
-              <a href="{{baseUrl}}food" class="inherit">
+              <a href="{{baseUrl}}food" class="link-icon">
                 <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
               </a>
            </paper-tab>
            <paper-tab link name="exercise" >
-             <a href="{{baseUrl}}exercise" class="inherit">
+             <a href="{{baseUrl}}exercise" class="link-icon">
                <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
              </a>
            </paper-tab>
