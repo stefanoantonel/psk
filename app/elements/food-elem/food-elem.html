@@ -1,8 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+
 <dom-module id="food-elem">
   <template>
     <style include="shared-styles"></style>
+
     <style>
       :host {
         display: block;
@@ -13,9 +15,23 @@
         right: 20px;
       }
     </style>
-    <paper-fab icon="add" class="add"></paper-fab>
-    <h2 class="page-title">{{greeting}}</h2>
 
+    <iron-ajax
+      auto
+      url="./mock.json"
+      params='{"alt":"json", "q":"chrome"}'
+      handle-as="json"
+      on-response="handleResponse"
+      debounce-duration="300"></iron-ajax>
+    <paper-fab icon="add" class="add"></paper-fab>
+
+    <template is="dom-repeat" items="{{foods}}">
+        <paper-material elevation="1">
+          <h3>{{item.title}}</h3>
+          <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto"/>
+          <span>{{item.description}}</span>
+        </paper-material>
+    </template>
   </template>
 
   <script>
@@ -30,7 +46,17 @@
             type: String,
             value: 'Food!',
             notify: true
+          },
+          foods: {
+            type: Array,
+            notify: true
           }
+        },
+
+        handleResponse: function(e, r) {
+          var response = r.response
+          console.log(response)
+          this.foods = response
         }
       });
     })();
