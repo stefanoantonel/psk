@@ -13,6 +13,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
+        z-index: 1;
       }
     </style>
 
@@ -54,9 +55,9 @@
         },
 
         handleResponse: function(e, r) {
-          var response = r.response
-          console.log(response)
-          this.foods = response
+          var response = r.response;
+          console.log(response);
+          this.foods = response;
         }
       });
     })();
