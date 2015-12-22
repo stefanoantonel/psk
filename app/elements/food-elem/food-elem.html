@@ -23,7 +23,9 @@
       video + template + .img-food {
         display: none;
       }
-
+      .bottom-space {
+        height: 100px;
+      }
     </style>
 
     <iron-ajax
@@ -50,6 +52,11 @@
           <span>{{item.description}}</span>
         </paper-material>
     </template>
+    <!-- END REPEAT -->
+
+    <div class="bottom-space"></div>
+    
+    <!-- END ELEMENT -->
   </template>
 
   <script>

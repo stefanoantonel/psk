@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Ejercicio 1",
+    "description": "Estire lo mas posible a la mañana",
+    "url": "./images/ejercicio1.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Ejercicio 2",
+    "description": "Haga flexiones de brazos cuando tenga timepo",
+    "url": "./images/ejercicio3.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Ejercicio 3",
+    "description": "Haga lo que dice el video",
+    "url": "./images/receta3.mp4",
+    "isImg": false
+  }
+]
