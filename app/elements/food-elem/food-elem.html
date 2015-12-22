@@ -9,12 +9,21 @@
       :host {
         display: block;
       }
-      .add {
+      .button-add {
         position: fixed;
         bottom: 20px;
         right: 20px;
         z-index: 1;
       }
+      .img-food {
+        /*min-width: 200px;*/
+        min-height: 100px;
+      }
+      /*To hide the img because the element is a video*/
+      video + template + .img-food {
+        display: none;
+      }
+
     </style>
 
     <iron-ajax
@@ -24,12 +33,20 @@
       handle-as="json"
       on-response="handleResponse"
       debounce-duration="300"></iron-ajax>
-    <paper-fab icon="add" class="add"></paper-fab>
+    <paper-fab icon="add" class="button-add"></paper-fab>
 
     <template is="dom-repeat" items="{{foods}}">
         <paper-material elevation="1">
           <h3>{{item.title}}</h3>
-          <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto"/>
+          <template is="dom-if" if="{{!item.isImg}}">
+            <!-- If this is a video -->
+            <video width="100%" height="auto" controls>
+              <source src="/elements/food-elem/{{item.url}}" type="video/mp4">
+              <!-- <source src="movie.ogg" type="video/ogg"> -->
+            </video>
+          </template>
+          <!-- It is going to be hide using css "video + template + .img-food" -->
+          <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-food"/>
           <span>{{item.description}}</span>
         </paper-material>
     </template>

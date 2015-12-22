@@ -16,9 +16,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+      .button-add {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+      }
     </style>
     <h2 class="page-title">{{greeting}}</h2>
-    <paper-fab icon="add"></paper-fab>
+    <paper-fab icon="add" class="button-add"></paper-fab>
     <span class="paper-font-body2">Update text to change the greeting...</span>
     <!-- Listens for "input" event and sets greeting to <input>.value -->
     <input class="paper-font-body2" value="{{greeting::input}}">

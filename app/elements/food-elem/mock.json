@@ -2,11 +2,19 @@
   {
     "title": "Receta 1",
     "description": "Mezclar harina con el agua y luego revolver mucho",
-    "url": "./images/receta1.jpg"
+    "url": "./images/receta1.jpg",
+    "isImg": true
   },
   {
     "title": "Receta 2",
     "description": "Unir los ingredientes para formar algo",
-    "url": "./images/receta2.jpg"
+    "url": "./images/receta2.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Receta 3",
+    "description": "Poner en el molde el video",
+    "url": "./images/receta3.mp4",
+    "isImg": false
   }
 ]
