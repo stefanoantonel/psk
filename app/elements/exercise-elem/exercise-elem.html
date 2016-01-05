@@ -1,0 +1,90 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="exercise-elem">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+      .button-add {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+      }
+      .img-exercise {
+        /*min-width: 200px;*/
+        min-height: 100px;
+      }
+      /*To hide the img because the element is a video*/
+      video + template + .img-exercise {
+        display: none;
+      }
+      .bottom-space {
+        height: 100px;
+      }
+    </style>
+
+    <paper-fab icon="add" class="button-add"></paper-fab>
+
+    <iron-ajax
+      auto
+      url="./mock.json"
+      params='{"alt":"json", "q":"chrome"}'
+      handle-as="json"
+      on-response="handleResponse"
+      debounce-duration="300"></iron-ajax>
+    <paper-fab icon="add" class="button-add"></paper-fab>
+
+    <template is="dom-repeat" items="{{exercises}}">
+        <paper-material elevation="1">
+          <h3>{{item.title}}</h3>
+          <template is="dom-if" if="{{!item.isImg}}">
+            <!-- If this is a video -->
+            <video width="100%" height="auto" controls>
+              <source src="/elements/exercise-elem/{{item.url}}" type="video/mp4">
+              <!-- <source src="movie.ogg" type="video/ogg"> -->
+            </video>
+          </template>
+          <!-- It is going to be hide using css "video + template + .img-food" -->
+          <img src="/elements/exercise-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-exercise"/>
+          <span>{{item.description}}</span>
+        </paper-material>
+    </template>
+    <!-- END REPEAT -->
+
+    <div class="bottom-space"></div>
+
+    <!-- END ELEMENT -->
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'exercise-elem',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Exercise!',
+            notify: true
+          },
+          exercises: {
+            type: Array,
+            notify: true
+          }
+        },
+
+        handleResponse: function(e, r) {
+          var response = r.response;
+          console.log(response);
+          this.exercises = response;
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

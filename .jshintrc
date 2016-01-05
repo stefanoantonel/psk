@@ -1,4 +1,6 @@
 {
+  "asi" : true,
+  "lastsemic" : true,
   "node": true,
   "browser": true,
   "bitwise": true,
