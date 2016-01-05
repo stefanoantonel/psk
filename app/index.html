@@ -109,53 +109,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main Area -->
       <!-- <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header> -->
       <paper-scroll-header-panel main id="headerPanelMain">
-      <!-- <paper-scroll-header-panel main id="headerPanelMain" class="flex"> -->
 
       <!-- In a furute the behaviour of the header will be here  -->
       <!-- <main-head></main-head> -->
 
       <!-- Main Toolbar -->
-
-      <paper-toolbar id="mainToolbar" class="">
-
+      <paper-toolbar>
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-        <span class="flex">Fitapp</span>
-
-        <!-- Toolbar icons -->
-
+        <div class="title">
+          <span>Fitapp</span>
+        </div>
         <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
         <paper-icon-button icon="search"></paper-icon-button>
-
      </paper-toolbar>
+
      <!-- App toolbar empty to make the elements not to overlap header and content-->
      <div class="space-header" style="height:64px; padding: 0 16px;"></div>
      <!-- <app-toolbar></app-toolbar> -->
-     <paper-toolbar>
+
+     <paper-toolbar id="tabsToolbar">
          <!-- Tabs for the 3 categories -->
-        <style is="custom-style">
+      <style is="custom-style">
         .link-icon {
           color: inherit;
           background-color: inherit;
-          display: inline-flex;
+          display: flex;
+          justify-content: center;
         }
-        </style>
-         <paper-tabs class="flex" attr-for-selected="name" selected="[[route]]">
-           <paper-tab link name="home">
-             <a href="{{baseUrl}}" class="link-icon">
-               <paper-icon-button id="home" class="flex" icon="icons:home"></paper-icon-button>
-             </a>
-           </paper-tab>
-           <paper-tab link name="food">
-              <a href="{{baseUrl}}food" class="link-icon">
-                <paper-icon-button id="food" class="flex" icon="maps:local-dining"></paper-icon-button>
-              </a>
-           </paper-tab>
-           <paper-tab link name="exercise" >
-             <a href="{{baseUrl}}exercise" class="link-icon">
-               <paper-icon-button id="exercise" class="flex" icon="maps:directions-bike"></paper-icon-button>
-             </a>
-           </paper-tab>
-         </paper-tabs>
+        paper-tabs {
+          width: 100%;
+        }
+      </style>
+      <paper-tabs class="link-icon" attr-for-selected="name" selected="[[route]]">
+        <paper-tab link name="home">
+         <a href="{{baseUrl}}" class="link-icon">
+           <paper-icon-button id="home" class="" icon="icons:home"></paper-icon-button>
+         </a>
+        </paper-tab>
+        <paper-tab link name="food">
+          <a href="{{baseUrl}}food" class="link-icon">
+            <paper-icon-button id="food" class="" icon="maps:local-dining"></paper-icon-button>
+          </a>
+        </paper-tab>
+        <paper-tab link name="exercise" >
+         <a href="{{baseUrl}}exercise" class="link-icon">
+           <paper-icon-button id="exercise" class="" icon="maps:directions-bike"></paper-icon-button>
+         </a>
+        </paper-tab>
+      </paper-tabs>
 
      </paper-toolbar>
 
