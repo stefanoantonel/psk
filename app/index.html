@@ -51,7 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endbuild -->
 
   <!-- Because this project uses vulcanize this should be your only html import
-       in this file. All other imports should go in elements.html -->
+  in this file. All other imports should go in elements.html -->
   <link rel="import" href="elements/elements.html">
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
@@ -75,7 +75,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
 
           <a data-route="profile" href="{{baseUrl}}profile">
-           <iron-icon id="food" class="" icon="social:person"></iron-icon>
+            <iron-icon id="food" class="" icon="social:person"></iron-icon>
             <span>Perfil</span>
           </a>
 
@@ -85,7 +85,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </a>
 
           <a data-route="food" href="{{baseUrl}}food">
-           <iron-icon id="food" class="" icon="maps:local-dining"></iron-icon>
+            <iron-icon id="food" class="" icon="maps:local-dining"></iron-icon>
             <span>Recetas</span>
           </a>
 
@@ -110,62 +110,62 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header> -->
       <paper-scroll-header-panel main id="headerPanelMain">
 
-      <!-- In a furute the behaviour of the header will be here  -->
-      <!-- <main-head></main-head> -->
+        <!-- In a furute the behaviour of the header will be here  -->
+        <!-- <main-head></main-head> -->
 
-      <!-- Main Toolbar -->
-      <paper-toolbar>
-        <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-        <div class="title">
-          <span>Fitapp</span>
-        </div>
-        <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
-        <paper-icon-button icon="search"></paper-icon-button>
-     </paper-toolbar>
+        <!-- Main Toolbar -->
+        <paper-toolbar>
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <div class="title">
+            <span>Fitapp</span>
+          </div>
+          <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
+          <paper-icon-button icon="search"></paper-icon-button>
+        </paper-toolbar>
 
-     <!-- App toolbar empty to make the elements not to overlap header and content-->
-     <div class="space-header" style="height:64px; padding: 0 16px;"></div>
-     <!-- <app-toolbar></app-toolbar> -->
+        <!-- App toolbar empty to make the elements not to overlap header and content-->
+        <div class="space-header" style="height:64px; padding: 0 16px;"></div>
+        <!-- <app-toolbar></app-toolbar> -->
 
-     <paper-toolbar id="tabsToolbar">
-         <!-- Tabs for the 3 categories -->
-      <style is="custom-style">
-        .link-icon {
-          color: inherit;
-          background-color: inherit;
-          display: flex;
-          justify-content: center;
-        }
-        paper-tabs {
-          width: 100%;
-        }
-      </style>
-      <paper-tabs class="link-icon" attr-for-selected="name" selected="[[route]]">
-        <paper-tab link name="home">
-         <a href="{{baseUrl}}" class="link-icon">
-           <paper-icon-button id="home" class="" icon="icons:home"></paper-icon-button>
-         </a>
-        </paper-tab>
-        <paper-tab link name="food">
-          <a href="{{baseUrl}}food" class="link-icon">
-            <paper-icon-button id="food" class="" icon="maps:local-dining"></paper-icon-button>
-          </a>
-        </paper-tab>
-        <paper-tab link name="exercise" >
-         <a href="{{baseUrl}}exercise" class="link-icon">
-           <paper-icon-button id="exercise" class="" icon="maps:directions-bike"></paper-icon-button>
-         </a>
-        </paper-tab>
-      </paper-tabs>
+        <paper-toolbar id="tabsToolbar">
+          <!-- Tabs for the 3 categories -->
+          <style is="custom-style">
+          .link-icon {
+            color: inherit;
+            background-color: inherit;
+            display: flex;
+            justify-content: center;
+          }
+          paper-tabs {
+            width: 100%;
+          }
+          </style>
+          <paper-tabs class="link-icon" attr-for-selected="name" selected="[[route]]">
+            <paper-tab link name="home">
+              <a href="{{baseUrl}}" class="link-icon">
+                <paper-icon-button id="home" class="" icon="icons:home"></paper-icon-button>
+              </a>
+            </paper-tab>
+            <paper-tab link name="food">
+              <a href="{{baseUrl}}food" class="link-icon">
+                <paper-icon-button id="food" class="" icon="maps:local-dining"></paper-icon-button>
+              </a>
+            </paper-tab>
+            <paper-tab link name="exercise" >
+              <a href="{{baseUrl}}exercise" class="link-icon">
+                <paper-icon-button id="exercise" class="" icon="maps:directions-bike"></paper-icon-button>
+              </a>
+            </paper-tab>
+          </paper-tabs>
 
-     </paper-toolbar>
+        </paper-toolbar>
 
         <!-- Main Content -->
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
             <section data-route="profile">
-                <my-profile></my-profile>
+              <my-profile></my-profile>
             </section>
 
             <section data-route="home">
@@ -175,7 +175,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
             <section data-route="food">
-                <food-elem></food-elem>
+              <food-elem></food-elem>
             </section>
 
             <section data-route="exercise">
@@ -193,65 +193,62 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <a href$="{{baseUrl}}users/Sam">Sam</a>
               </paper-material>
               <paper-material elevation="1">
-                  <my-list><my-list>
-              </paper-material>
+                <my-list><my-list>
+                </paper-material>
+              </section>
 
-                  <exercise-elem></exercise-elem>
+              <section data-route="user-info">
+                <paper-material elevation="1">
+                  <h2 class="page-title">User: {{params.name}}</h2>
+                  <div>This is {{params.name}}'s section</div>
+                </paper-material>
+              </section>
 
-            </section>
+              <section data-route="contact">
+                <paper-material elevation="1">
+                  <h2 class="page-title">Contact</h2>
+                  <p>This is the contact section</p>
+                </paper-material>
+              </section>
+            </iron-pages>
+            <!-- To move between the different pages -->
+            <!-- <script>
+            document.addEventListener('click', function(e) {
+            var pages = document.querySelector('iron-pages');
+            pages.selectNext();
+          });
+        </script> -->
+      </div>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
 
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="page-title">User: {{params.name}}</h2>
-                <div>This is {{params.name}}'s section</div>
-              </paper-material>
-            </section>
+  <paper-toast id="toast">
+    <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+  </paper-toast>
 
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <h2 class="page-title">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material>
-            </section>
-          </iron-pages>
-          <!-- To move between the different pages -->
-          <!-- <script>
-              document.addEventListener('click', function(e) {
-                var pages = document.querySelector('iron-pages');
-                pages.selectNext();
-              });
-            </script> -->
-        </div>
-      </paper-scroll-header-panel>
-    </paper-drawer-panel>
+  <!-- Uncomment next block to enable Service Worker support (1/2) -->
+  <!--
+  <paper-toast id="caching-complete"
+  duration="6000"
+  text="Caching complete! This app will work offline.">
+</paper-toast>
 
-    <paper-toast id="toast">
-      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
-    </paper-toast>
+<platinum-sw-register auto-register
+clients-claim
+skip-waiting
+base-uri="bower_components/platinum-sw/bootstrap"
+on-service-worker-installed="displayInstalledToast">
+<platinum-sw-cache default-cache-strategy="fastest"
+cache-config-file="cache-config.json">
+</platinum-sw-cache>
+</platinum-sw-register>
+-->
 
-    <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
+</template>
 
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          base-uri="bower_components/platinum-sw/bootstrap"
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="fastest"
-                         cache-config-file="cache-config.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
-    -->
-
-  </template>
-
-  <!-- build:js scripts/app.js -->
-  <script src="scripts/app.js"></script>
-  <!-- endbuild-->
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild-->
 </body>
 
 </html>

@@ -47,7 +47,7 @@
               <!-- <source src="movie.ogg" type="video/ogg"> -->
             </video>
           </template>
-          <!-- It is going to be hide using css "video + template + .img-food" -->
+          <!-- Img is going to be hidden using css "video + template + .img-food" -->
           <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-food"/>
           <span>{{item.description}}</span>
         </paper-material>
@@ -55,7 +55,7 @@
     <!-- END REPEAT -->
 
     <div class="bottom-space"></div>
-    
+
     <!-- END ELEMENT -->
   </template>
 
@@ -82,10 +82,6 @@
           var response = r.response;
           console.log(response);
           this.foods = response;
-        },
-
-        helloW: function() {
-          console.log('helloW');
         }
       });
     })();
