@@ -16,7 +16,7 @@
     "neon-animation": "PolymerElements/neon-animation#~1.0.9"
   },
   "devDependencies": {
-    "web-component-tester": "*"
+    "web-component-tester": "^4.0.0"
   },
   "ignore": []
 }

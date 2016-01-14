@@ -7,5 +7,6 @@
 <<<<<<< HEAD
 =======
 * [Deploy to Firebase using Pretty URLs](deploy-to-firebase-pretty-urls.md)
+* [Deploy to Google App Engine](deploy-to-google-app-engine.md)
 * [Use PSK for Mobile Chrome Apps](mobile-chrome-apps.md)
 >>>>>>> psk/master
