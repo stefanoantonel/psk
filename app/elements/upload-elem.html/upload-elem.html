@@ -1,0 +1,45 @@
+<!--
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html"> -->
+
+<dom-module id="upload-elem">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      span, input {
+        @apply(--paper-font-body2);
+      }
+
+      .button-add {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+      }
+    </style>
+
+    <h2 class="page-title">{{greeting}}</h2>
+    <paper-input label="title"></paper-input>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'upload-elem',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Agregar Nuevo Post!',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>

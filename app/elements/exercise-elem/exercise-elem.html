@@ -1,5 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="./exercise-add.html">
+<link rel="import" href="./exercise-post.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-from-left-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-out-animation.html">
+
 
 <dom-module id="exercise-elem">
   <template>
@@ -14,16 +18,12 @@
         right: 20px;
         z-index: 1;
       }
-      .img-exercise {
-        /*min-width: 200px;*/
-        min-height: 100px;
+      neon-animated-pages {
+        height: 100%;
       }
-      /*To hide the img because the element is a video*/
-      video + template + .img-exercise {
-        display: none;
-      }
-      .bottom-space {
-        height: 100px;
+      body {
+        overflow: hidden;
+        @apply(--layout-fullbleed);
       }
     </style>
 
@@ -34,28 +34,16 @@
       handle-as="json"
       on-response="handleResponse"
       debounce-duration="300"></iron-ajax>
-    <paper-fab icon="add" class="button-add" on-tap="addExercisePopup"></paper-fab>
 
-    <template is="dom-repeat" items="{{exercises}}">
-        <paper-material elevation="1">
-          <h3>{{item.title}}</h3>
-          <template is="dom-if" if="{{!item.isImg}}">
-            <!-- If this is a video -->
-            <video width="100%" height="auto" controls>
-              <source src="/elements/exercise-elem/{{item.url}}" type="video/mp4">
-              <!-- <source src="movie.ogg" type="video/ogg"> -->
-            </video>
-          </template>
-          <!-- It is going to be hide using css "video + template + .img-food" -->
-          <img src="/elements/exercise-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-exercise"/>
-          <span>{{item.description}}</span>
-        </paper-material>
-    </template>
-    <!-- END REPEAT -->
+    <a href="/upload">
+      <paper-fab icon="add" class="button-add" on-tap="addExercisePopup"></paper-fab>
+    </a>
 
-    <div class="bottom-space"></div>
 
-    <exercise-add id="new-exercise"><exercise-add>
+
+    <section>
+      <exercise-post exercises={{exercises}}><exercise-post>
+    </section>
 
     <!-- END ELEMENT -->
   </template>
@@ -85,12 +73,15 @@
           this.exercises = response;
         },
 
-        addExercisePopup: function(event) {
+        addExercisePopup: function() {
           console.log('click add');
           var dropdown = document.getElementById('new-exercise');
+          // var pages = document.getElementById('pages');
+
           if (dropdown) {
             dropdown.show();
           }
+          this.$.pages.selected = 1;
         }
       });
     })();

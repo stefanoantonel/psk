@@ -1,0 +1,77 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
+
+<dom-module id="exercise-post">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        /*visibility: hidden;*/
+      }
+      .bottom-space {
+        height: 100px;
+      }
+      .img-exercise {
+        /*min-width: 200px;*/
+        min-height: 100px;
+      }
+      /*To hide the img because the element is a video*/
+      video + template + .img-exercise {
+        display: none;
+      }
+      paper-material {
+        height: auto;
+      }
+    </style>
+
+    <template is="dom-repeat" items="{{exercises}}">
+        <paper-material elevation="1">
+          <h3>{{item.title}}</h3>
+          <template is="dom-if" if="{{!item.isImg}}">
+            <!-- If this is a video -->
+            <video width="100%" height="auto" controls>
+              <source src="/elements/exercise-elem/{{item.url}}" type="video/mp4">
+              <!-- <source src="movie.ogg" type="video/ogg"> -->
+            </video>
+          </template>
+          <!-- It is going to be hide using css "video + template + .img-food" -->
+          <img src="/elements/exercise-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-exercise"/>
+          <span>{{item.description}}</span>
+        </paper-material>
+    </template>
+    <!-- END REPEAT -->
+
+  <div class="bottom-space"></div>
+
+  </template>
+  <!-- END ELEMENT -->
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'exercise-post',
+
+        behaviors: [
+          Polymer.NeonAnimatableBehavior,
+          Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Exercise!',
+            notify: true
+          },
+          exercises: {
+            type: Array,
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

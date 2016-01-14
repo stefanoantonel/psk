@@ -239,7 +239,7 @@ gulp.task('clean', function() {
 gulp.task('serve', ['lint', 'styles', 'elements'], function() {
   browserSync({
     port: 5000,
-    notify: false,
+    notify: true,
     logPrefix: 'PSK',
     snippetOptions: {
       rule: {
@@ -252,7 +252,7 @@ gulp.task('serve', ['lint', 'styles', 'elements'], function() {
     // Run as an https by uncommenting 'https: true'
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
-    // https: true,
+    https: true,
     server: {
       baseDir: ['.tmp', 'app'],
       middleware: [historyApiFallback()]
